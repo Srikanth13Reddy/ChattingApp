@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".activities.login.SignInActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:src="@drawable/logo"
+        app:civ_border_width="0dp"
+        app:civ_border_color="#FF000000"/>
+
+    <EditText
+        android:id="@+id/et_email_signin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="16dp" />
+
+    <EditText
+        android:id="@+id/et_password_signin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/forgotPass"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="12dp"
+        android:onClick="signUp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="ForgotPassword" />
+
+
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_marginTop="24dp"
+        android:text="Sign In"
+        android:id="@+id/btn_signIn"
+        android:textAllCaps="false"
+        android:background="@color/purple_700"
+        android:textColor="@color/white"
+        android:layout_height="40dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="0dp"
+            android:layout_marginTop="24dp"
+            android:text="Google"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:id="@+id/btn_gSignin"
+            android:layout_marginEnd="12dp"
+            android:textAllCaps="false"
+            android:background="@color/purple_700"
+            android:textColor="@color/white"
+            android:layout_height="40dp"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_marginTop="24dp"
+            android:text="Facebook"
+            android:id="@+id/btn_fSignin"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:background="@color/purple_700"
+            android:textColor="@color/white"
+            android:layout_height="40dp"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="signUp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Don't have an account" />
+</LinearLayout>

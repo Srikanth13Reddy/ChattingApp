@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "145059402681",
+    "project_id": "static-athlete-283613",
+    "storage_bucket": "static-athlete-283613.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145059402681:android:84d63262775ab45a055c68",
+        "android_client_info": {
+          "package_name": "com.apptomate.chattingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145059402681-m26urbit9kc3u6eedc4e76b2vmfv7p3s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apptomate.chattingapp",
+            "certificate_hash": "52c11f04a608c5a7c31b267adb996765ea77e91a"
+          }
+        },
+        {
+          "client_id": "145059402681-sa7ni0h41j2l9pjoo8s5k8qgb4uqfcrl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY3kl7zLImd0WleSJmEkZYE35K7ElE5MM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "145059402681-sa7ni0h41j2l9pjoo8s5k8qgb4uqfcrl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
