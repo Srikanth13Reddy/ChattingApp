@@ -3,38 +3,53 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:padding="6dp"
+    android:layout_marginRight="120dp"
+    android:id="@+id/ll_msg"
+    android:layout_marginTop="6dp"
+    android:background="@drawable/bg_receiver"
     android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
+        android:gravity="center"
         android:layout_height="wrap_content">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:paddingStart="10dp"
             android:src="@drawable/profile"
             app:civ_border_color="#FF000000"
             app:civ_border_width="0dp"/>
 
-        <TextView
-            android:id="@+id/tv_msg"
-            android:textSize="16sp"
-            android:layout_weight="1"
-            android:text="His Message"
-            android:padding="15dp"
-            android:textColor="@color/black"
-            android:background="@drawable/bg_receiver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="12:00PM"
-            android:textSize="12dp"
-            android:textColor="@color/black"
-            android:id="@+id/tv_time"
-            android:layout_height="wrap_content"/>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:orientation="vertical"
+          android:layout_height="wrap_content">
+          <TextView
+              android:id="@+id/tv_msg"
+              android:textSize="16sp"
+              android:layout_weight="1"
+              android:text="His Message"
+              android:paddingStart="12dp"
+              android:layout_marginEnd="6dp"
+              android:textColor="@color/black"
+              android:paddingBottom="3dp"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"/>
+          <TextView
+              android:layout_width="match_parent"
+              android:text="12:00PM"
+              android:gravity="end"
+              android:textSize="8dp"
+              android:textColor="@color/black"
+              android:id="@+id/tv_time"
+              android:layout_height="wrap_content"/>
+      </LinearLayout>
+
+
     </LinearLayout>
 
     <TextView

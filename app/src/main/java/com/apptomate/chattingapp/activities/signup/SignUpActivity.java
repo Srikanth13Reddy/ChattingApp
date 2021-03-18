@@ -62,8 +62,10 @@ public class SignUpActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     progressDialog.dismiss();
                                     if (task.isSuccessful()) {
-                                        Users user = new Users(binding.etNameSignup.getText().toString(), binding.etEmailSignup.getText().toString(), binding.etPasswordSignup.getText().toString(),"Online");
+                                        Users user = new Users(binding.etNameSignup.getText().toString(), binding.etEmailSignup.getText().toString(), binding.etPasswordSignup.getText().toString(),"Online","noOne");
                                         String id = task.getResult().getUser().getUid();
+                                        user.setUserId(id);
+                                        user.setTypingTo("noOne");
                                        // database.getReference().child("Users").child(id).setValue(user);
                                         DatabaseReference databaseReference=database.getReference("Users");
                                         databaseReference.child(id).setValue(user);

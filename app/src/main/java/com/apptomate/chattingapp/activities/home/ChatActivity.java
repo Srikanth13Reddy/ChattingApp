@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.view.View;
 
@@ -68,16 +70,23 @@ public class ChatActivity extends AppCompatActivity {
                 {
                     userName=""+ ds.child("userName").getValue();
                     imageUrl=""+ ds.child("profilepic").getValue();
-                    String onlineStatus=""+ds.child("onlineStatus").getValue();
-                    if (onlineStatus.equalsIgnoreCase("Online"))
-                    {
-                        binding.userOnlineStatus.setText("Online");
-                    }else {
-                        Calendar calendar= Calendar.getInstance(Locale.ENGLISH);
-                        calendar.setTimeInMillis(Long.parseLong(onlineStatus));
-                        String dateTime= DateFormat.format("dd/MM/yyyy hh:mm aa",calendar).toString();
-                        binding.userOnlineStatus.setText("Last Seen  "+dateTime);
-                    }
+                  String  typing=""+ ds.child("typingTo").getValue();
+                  if (typing.equalsIgnoreCase(senderID))
+                  {
+                      binding.userOnlineStatus.setText("typing....");
+                  }else {
+                      String onlineStatus=""+ds.child("onlineStatus").getValue();
+                      if (onlineStatus.equalsIgnoreCase("Online"))
+                      {
+                          binding.userOnlineStatus.setText("Online");
+                      }else {
+                          Calendar calendar= Calendar.getInstance(Locale.ENGLISH);
+                          calendar.setTimeInMillis(Long.parseLong(onlineStatus));
+                          String dateTime= DateFormat.format("dd/MM/yyyy hh:mm aa",calendar).toString();
+                          binding.userOnlineStatus.setText("Last Seen  "+dateTime);
+                      }
+                  }
+
                     binding.userName.setText(userName);
                     Picasso.get().load(imageUrl).placeholder(R.drawable.profile).into(binding.profileImage);
                 }
@@ -101,7 +110,7 @@ public class ChatActivity extends AppCompatActivity {
         binding.msgSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String message=binding.etMessage.getText().toString();
+                String message=binding.etMessage.getText().toString().trim();
                 HashMap<String,Object> hm=new HashMap<>();
                 hm.put("sender",senderID);
                 hm.put("receiver",receiverId);
@@ -112,6 +121,28 @@ public class ChatActivity extends AppCompatActivity {
               //  messageModel.setTimeStamp(new Date().getTime());
                 binding.etMessage.setText("");
                 database.getReference().child("chatsnew").push().setValue(hm);
+            }
+        });
+        binding.etMessage.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                       if (s.toString().length()==0)
+                       {
+                           checkTypingStatus("noOne");
+                       }else {
+                           checkTypingStatus(receiverId);
+                       }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s)
+            {
+
             }
         });
 
@@ -153,6 +184,14 @@ public class ChatActivity extends AppCompatActivity {
         DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference("Users").child(senderID);
         HashMap<String,Object> hashMap=new HashMap<>();
         hashMap.put("onlineStatus",status);
+        databaseReference.updateChildren(hashMap);
+    }
+
+    private void checkTypingStatus(String typing)
+    {
+        DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference("Users").child(senderID);
+        HashMap<String,Object> hashMap=new HashMap<>();
+        hashMap.put("typingTo",typing);
         databaseReference.updateChildren(hashMap);
     }
 
@@ -199,6 +238,7 @@ public class ChatActivity extends AppCompatActivity {
         super.onPause();
        String timeStamp= String.valueOf(System.currentTimeMillis());
         checkOnlineStatus(timeStamp);
+        checkTypingStatus("noOne");
         databaseRefForSeen.removeEventListener(seenListner);
     }
 

@@ -196,6 +196,7 @@ public class SignInActivity extends AppCompatActivity {
                             Users users=new Users();
                             users.setUserId(user.getUid());
                             users.setOnlineStatus("Online");
+                            users.setTypingTo("noOne");
                             users.setProfilepic(user.getPhotoUrl().toString());
                             users.setUserName(user.getDisplayName());
                             users.setMail(user.getEmail());

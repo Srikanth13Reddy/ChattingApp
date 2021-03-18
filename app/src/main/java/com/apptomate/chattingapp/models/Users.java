@@ -2,7 +2,7 @@ package com.apptomate.chattingapp.models;
 
 public class Users {
 
-    String profilepic,userName,mail,password,userId,lastMessage,phone,search,cover,onlineStatus;
+    String profilepic,userName,mail,password,userId,lastMessage,phone,search,cover,onlineStatus,typingTo;
 
     public Users(String profilepic, String userName, String mail, String password, String userId, String lastMessage, String phone, String search, String cover, String onlineStatus) {
         this.profilepic = profilepic;
@@ -53,11 +53,12 @@ public class Users {
 
     //For SignUp
 
-    public Users( String userName, String mail, String password,String onlineStatus) {
+    public Users( String userName, String mail, String password,String onlineStatus,String typingTo) {
         this.userName = userName;
         this.mail = mail;
         this.password = password;
         this.onlineStatus=onlineStatus;
+        this.typingTo=typingTo;
     }
 
     public String getProfilepic() {
@@ -106,5 +107,13 @@ public class Users {
 
     public void setLastMessage(String lastMessage) {
         this.lastMessage = lastMessage;
+    }
+
+    public String getTypingTo() {
+        return typingTo;
+    }
+
+    public void setTypingTo(String typingTo) {
+        this.typingTo = typingTo;
     }
 }
