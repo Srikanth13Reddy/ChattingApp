@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.apptomate.chattingapp.fragments.CallsFragment;
-import com.apptomate.chattingapp.fragments.ChatsFragment;
+import com.apptomate.chattingapp.fragments.UsersFragment;
 import com.apptomate.chattingapp.fragments.StatusFragment;
 
 public class FragmentsAdapter extends FragmentPagerAdapter {
@@ -21,10 +21,10 @@ public class FragmentsAdapter extends FragmentPagerAdapter {
 
         switch (position)
         {
-            case 0: return new ChatsFragment();
+            case 0: return new UsersFragment();
             case 1: return new StatusFragment();
             case 2: return new CallsFragment();
-            default: return new ChatsFragment();
+            default: return new UsersFragment();
         }
     }
 

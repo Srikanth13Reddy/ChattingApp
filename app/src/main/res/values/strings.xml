@@ -2,4 +2,5 @@
     <string name="app_name">ChattingApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="did_t_receive_the_otp_resend">Did\'t receive the otp ? <b>Resend</b></string>
 </resources>

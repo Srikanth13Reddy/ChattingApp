@@ -2,19 +2,28 @@ package com.apptomate.chattingapp.models;
 
 public class ModelChatNew {
 
-    String message,receiver,sender;
+    String message,receiver,sender,type;
     String seenMessage;
     Long timeStamp;
 
     public ModelChatNew() {
     }
 
-    public ModelChatNew(String message, String receiver, String sender, Long timeStamp, String seenMessage) {
+    public ModelChatNew(String message, String receiver, String sender, Long timeStamp, String seenMessage,String type) {
         this.message = message;
         this.receiver = receiver;
         this.sender = sender;
         this.timeStamp = timeStamp;
         this.seenMessage = seenMessage;
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getMessage() {

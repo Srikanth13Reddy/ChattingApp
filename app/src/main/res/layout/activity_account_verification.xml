@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/buttonColor"
+    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="24dp"
+    android:orientation="vertical"
+    tools:context=".activities.login.AccountVerificationActivity">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/ic_baseline_phone_android_24"
+        android:layout_height="200dp"
+        app:tint="@color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Enter code sent to your number"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/text_tv"
+        android:layout_width="wrap_content"
+        android:text="We sent otp to +91 00000000000"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif"
+        android:layout_height="wrap_content"/>
+
+    <com.goodiebag.pinview.Pinview
+        android:id="@+id/pinview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:pinWidth="40dp"
+        app:pinHeight="40dp"
+        app:pinLength="4"
+        android:layout_marginTop="24dp"
+        app:cursorVisible="false"
+        app:forceKeyboard="false"
+        app:hint="0"
+        app:inputType="number"
+        app:password="false"/>
+
+    <TextView
+        android:id="@+id/tv_resend"
+        android:layout_width="match_parent"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/white"
+        android:gravity="end"
+        android:layout_marginTop="24dp"
+        android:text="@string/did_t_receive_the_otp_resend"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_width="150dp"
+        android:layout_marginTop="36dp"
+        android:text="Submit"
+        android:layout_marginBottom="36dp"
+        android:onClick="verifyOtp"
+        android:textAllCaps="false"
+        android:textColor="@color/primary"
+        android:background="@drawable/round_border"
+        android:layout_height="40dp"/>
+
+</LinearLayout>
+
+</ScrollView>

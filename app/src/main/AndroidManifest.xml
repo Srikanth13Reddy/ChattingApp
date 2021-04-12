@@ -6,22 +6,24 @@
 
     <application
         android:allowBackup="true"
+        android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:debuggable="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.home.ChatActivity"></activity>
-        <activity android:name=".activities.home.ProfileActivity" />
-        <activity android:name=".activities.home.ChatDetailedActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".activities.login.AccountVerificationActivity"></activity>
+        <activity android:name=".activities.login.PhoneNumberLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.home.ChatActivity" />
+        <activity android:name=".activities.home.ProfileActivity" />
+        <activity android:name=".activities.home.ChatDetailedActivity" />
+        <activity android:name=".SplashActivity"></activity>
         <activity android:name=".activities.login.SignInActivity" />
         <activity android:name=".activities.signup.SignUpActivity" />
         <activity android:name=".activities.home.MainActivity" />

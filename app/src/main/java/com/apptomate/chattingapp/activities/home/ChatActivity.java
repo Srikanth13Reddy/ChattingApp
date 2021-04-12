@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.view.View;
+import android.widget.ImageButton;
 
 import com.apptomate.chattingapp.R;
 import com.apptomate.chattingapp.adapters.ChatAdapter;
@@ -46,6 +47,7 @@ public class ChatActivity extends AppCompatActivity {
     ChatAdapterNew adapterNew;
     private String senderID,receiverId;
     DatabaseReference userDbReference;
+    ImageButton attchBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +100,12 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
+        binding.attchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
 
 
         binding.backArrow.setOnClickListener(v -> finish());

@@ -35,14 +35,14 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 
-public class ChatsFragment extends Fragment {
+public class UsersFragment extends Fragment {
 
     FragmentChatsBinding binding;
     FirebaseDatabase database;
     FirebaseAuth auth;
     ArrayList<Users> arrayList=new ArrayList<>();
 
-    public ChatsFragment() {
+    public UsersFragment() {
         // Required empty public constructor
     }
 
@@ -54,7 +54,7 @@ public class ChatsFragment extends Fragment {
         binding= FragmentChatsBinding.inflate(inflater, container, false);
         database= FirebaseDatabase.getInstance();
         auth=FirebaseAuth.getInstance();
-       getAllUsers();
+        getAllUsers();
          return binding.getRoot();
     }
 
